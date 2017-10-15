@@ -1,3 +1,31 @@
+.rtl{
+  direction: rtl;
+}
+.font-12{
+  font-size: 12px
+}
+.font-14{
+  font-size: 14px
+}
+.menu-label{
+    font-family: "Cairo", Arial, sans-serif;
+    font-size: 14px;
+
+}
+.dropdown-navbar{
+    margin: 14px -62px 23px 13px;
+}
+.btn-dashbord {
+  font-family: "Cairo", Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.btn-add {
+  text-align: left;
+    
+}
 .tim-row{
     margin-bottom: 20px;
 }
@@ -60,6 +88,22 @@
     height: 70px;
     display: block;
 }
+.space-30{
+    height: 30px;
+    display: block;
+}
+.space-20{
+    height: 20px;
+    display: block;
+}
+.space-10{
+    height: 10px;
+    display: block;
+}
+.space-5{
+    height: 5px;
+    display: block;
+}
 .navigation-example .img-src{
     background-attachment: scroll;
 }
@@ -117,9 +161,7 @@
 
 .logo-container .logo{
     overflow: hidden;
-    border-radius: 50%;
-    border: 1px solid #333333;
-    width: 50px;
+      width: 85px;
     float: left;
 }
 

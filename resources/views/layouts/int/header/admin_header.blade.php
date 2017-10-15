@@ -11,12 +11,11 @@
 	    	<a href="{{ url('/') }}">
 	        	<div class="logo-container">
 	                <div class="logo">
-	                    <img src="/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+	                    <img src="/img/logo2.png" alt="Jizlah Logo" rel="tooltip"  data-placement="bottom" data-html="true">
 	                </div>
 	                <div class="brand">
 	                    <!-- Creative Tim -->
-                      {{ config('app.name', 'Project') }}
-	                </div>
+ 	                </div>
 
 
 				</div>
@@ -26,16 +25,43 @@
 	    <div class="collapse navbar-collapse" id="navigation-index">
 	    	<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="components-documentation.html" target="_blank">
-						<i class="material-icons">dashboard</i> Components
+					<a href="{{ route('dashbord')}} " >
+						<i class="material-icons">dashboard</i><span class="menu-label"> لوحة التحكم </span>
 					</a>
 				</li>
-				<li>
-					<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">
-						<i class="material-icons">unarchive</i> Upgrade to PRO
+
+					<!-- <a href="{{ route('dashbord')}} " >
+						<i class="material-icons">local_grocery_store</i><span class="menu-label"> المتجر</span>
+					</a> -->
+
+          <li>
+        		  <a href="{{ route('store')}} " >
+   						<i class="material-icons">local_grocery_store</i><span class="menu-label"> المتجر</span>
+   					</a>
+        	</li>
+
+
+
+
+
+          <!-- /////////////////////////////////// -->
+
+        <li>
+					<a href="{{ route('dashbord')}} " >
+						<i class="material-icons">insert_emoticon</i><span class="menu-label"> المستخدمين</span>
 					</a>
 				</li>
-				<li>
+        <li>
+					<a   href="{{ route('dashbord')}} "  >
+						<i class="material-icons">insert_drive_file</i><span class="menu-label"> التقارير  </span>
+					</a>
+				</li>
+        <li>
+					<a   href="{{ route('dashbord')}} "  >
+						<i class="material-icons">settings</i> <span class="menu-label"> الإعدادات </span>
+					</a>
+				</li>
+				<!-- <li>
 					<a rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-white btn-simple btn-just-icon">
 						<i class="fa fa-twitter"></i>
 					</a>
@@ -49,7 +75,7 @@
 					<a rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-white btn-simple btn-just-icon">
 						<i class="fa fa-instagram"></i>
 					</a>
-				</li>
+				</li> -->
          @if (Auth::guest())
              <li><a href="{{ route('login') }}">Login</a></li>
              <li><a href="{{ route('register') }}">Register</a></li>

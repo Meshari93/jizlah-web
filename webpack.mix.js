@@ -17,7 +17,7 @@ mix.scripts([
   //   'resources/assets/js/frameworks/',
   'resources/assets/js/frameworks/jquery.min.js',
   'resources/assets/js/frameworks/bootstrap.min.js',
-
+  'resources/assets/js/frameworks/toastr.js',
   'resources/assets/js/frameworks/material.min.js',
 
   'resources/assets/js/frameworks/nouislider.min.js',

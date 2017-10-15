@@ -82,7 +82,7 @@
                     Laravel
                 </div>
  	                        <img src="/img/avatar.jpg" alt="Rounded Image" class="img-rounded img-responsive">
- 
+
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
@@ -93,5 +93,8 @@
                 </div>
             </div>
         </div>
+        <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+                {!! Toastr::message() !!}
     </body>
 </html>

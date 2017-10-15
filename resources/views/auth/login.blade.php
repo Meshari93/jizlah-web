@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="section section-full-screen section-signup" style="background-image: url('/img/city.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+	<div class="section section-full-screen section-signup" style="background-image: url('/img/city.jpg'); background-size: cover; background-position: top center; min-height: 650px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">

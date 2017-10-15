@@ -1938,7 +1938,7 @@ legend {
   border: 0;
   border-radius: 3px;
   box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-  padding: 10px 0;
+  padding: 3px 0;
 }
 .navbar .navbar-brand {
   position: relative;
@@ -1961,7 +1961,7 @@ legend {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   text-transform: uppercase;
   border-radius: 3px;
 }
@@ -2310,7 +2310,7 @@ legend {
   background-color:#9c27b0;
   box-shadow: none;
   color: #fff;
-  padding-top: 10px;
+  padding-top: 3px;
 }
 .navbar.navbar-transparent .logo-container .brand {
   color: #FFFFFF;
@@ -2369,6 +2369,7 @@ legend {
 }
 .dropdown-menu li {
   position: relative;
+  text-align: center;
 }
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus,
@@ -3101,7 +3102,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 40px 0;
 }
 
 .section-navbars {
