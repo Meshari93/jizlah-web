@@ -15,7 +15,7 @@
            @endif
           <div class="row">
 						<div class="col-md-12 ">
-              <a href="{{ route('animal') }}" class="btn btn-success  btn-dashbord"> رجوع <div class="ripple-container"></div></a>
+              <a href="{{ route('animal') }}" class="btn btn-denger  btn-dashbord"> رجوع <div class="ripple-container"></div></a>
               <div class="col-md-1 pull-right rtl  btn-warning  pull-right btn-dashbord">
                 <span>أضافة</span>
               </div>

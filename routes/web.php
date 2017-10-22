@@ -29,6 +29,14 @@ Route::prefix('store')->group(function(){
 
   Route::get('/animal', 'AnimalController@index')->name('animal');
   Route::get('/addAnimal', 'AnimalController@create')->name('add.animal');
-   Route::post('/storeAnimal', 'AnimalController@store')->name('store.animal');
+  Route::post('/storeAnimal', 'AnimalController@store')->name('store.animal');
+
+  Route::get('/healthStatus', 'AnimalHealthController@index')->name('health.animal');
+  Route::post('/addsick', 'AnimalSickController@store')->name('addsick.animal');
 
 });
+
+//Sick animal  route -----//
+  Route::get('/sick', 'AnimalSickController@index')->name('sick.animal'); //return view of sick
+  Route::get('/deleteSick/{id}', 'AnimalSickController@destroy')->name('delete.sick');//  delete sick
+  Route::post('/addSickAnimal', 'AnimalHealthController@store')->name('addSickAnimal.animal'); //add Animal Sick

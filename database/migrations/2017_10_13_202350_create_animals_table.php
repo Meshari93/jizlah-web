@@ -22,8 +22,8 @@ class CreateAnimalsTable extends Migration
             $table->integer('purchasing_price');
             $table->integer('selling_price')->nullable();
             $table->string('supplier');
-            $table->date('date_of_purchase');
-            $table->date('date_of_sale')->nullable();
+            $table->text('date_of_purchase');
+            $table->text('date_of_sale')->nullable();
             $table->string('health_status')->nullable();
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();

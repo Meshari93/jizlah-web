@@ -23,5 +23,6 @@ mix.scripts([
   'resources/assets/js/frameworks/nouislider.min.js',
   'resources/assets/js/frameworks/bootstrap-datepicker.js',
   'resources/assets/js/frameworks/material-kit.js',
+  'resources/assets/js/frameworks/select2/select2.full.min.js',
   'resources/assets/js/layouts/text.js',
-], 'public/js/app.js');
+ ], 'public/js/app.js');

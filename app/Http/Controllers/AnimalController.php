@@ -10,6 +10,7 @@ use Toastr;
 use Image;
 
 use App\Animal;
+use App\Sick;
 class AnimalController extends Controller
 {
 
@@ -44,13 +45,19 @@ public function __construct()
         $maleTess = Animal::where('type', '=', 'tays')->where('gender', '=', 'male')->count();
         $femaleTess = $tess - $maleTess;
 
+        $animalID = Animal::select('id')->get();
+        $sickName = Sick::select('name', 'id')->get();
+
         return view('template.store.purchases.animal.animal', [
               'najdi' => $najdi,'malenajdi' => $malenajdi,'femalenajdi' => $femalenajdi,
                'naimi' => $naimi, 'malenaimi' => $malenaimi,'femalenaimi' => $femalenaimi,
                'huri' => $huri,'malehuri' => $malehuri,'femalehuri' => $femalehuri,
                'barbry' => $barbry, 'malebarbry' => $malebarbry, 'femalebarbry' => $femalebarbry,
                'sawakini' => $sawakini , 'malesawakini' => $malesawakini,'femalesawakini' => $femalesawakini,
-               'tess' => $tess, 'maleTess' => $maleTess, 'femaleTess' => $femaleTess]);
+               'tess' => $tess, 'maleTess' => $maleTess, 'femaleTess' => $femaleTess,
+
+               'sickName' =>$sickName ,'animalID' => $animalID,
+             ]);
     }
 
     /**
@@ -142,7 +149,6 @@ public function __construct()
 
    Toastr::success('Add a new animal', 'Add Item', ["positionClass" => "toast-bottom-left"]);
     return back();
-  // return dd($videoname);
 
 
     }

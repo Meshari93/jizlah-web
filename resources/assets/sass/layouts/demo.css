@@ -1,11 +1,17 @@
 .rtl{
   direction: rtl;
 }
+.ptm{
+    margin: 0 0 0px;
+}
 .font-12{
   font-size: 12px
 }
 .font-14{
   font-size: 14px
+}
+.input-from-group{
+  margin-top: 10px;
 }
 .menu-label{
     font-family: "Cairo", Arial, sans-serif;
@@ -24,7 +30,7 @@
 
 .btn-add {
   text-align: left;
-    
+
 }
 .tim-row{
     margin-bottom: 20px;

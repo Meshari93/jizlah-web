@@ -10,10 +10,20 @@
           <div class="row">
 						<div class="col-md-10 ">
  							<!-- <a class="btn btn-primary  pull-right btn-dashbord"> المبيعات<div class="ripple-container"></div></a>
-              <a class="btn btn-info pull-right btn-dashbord"> المشتريات <div class="ripple-container"></div></a>
-              <a href="{{ route('animal') }}" class="btn btn-warning  pull-right btn-dashbord"> المواشي<div class="ripple-container"></div></a> -->
-               <a   class="btn btn-info btn-dashbord"> طباعة <div class="ripple-container"></div></a>
-              <a href="{{ route('add.animal') }}" class="btn btn-success  btn-dashbord"> أضافة <div class="ripple-container"></div></a>
+              <a class="btn btn-info pull-right btn-dashbord"> المشتريات <div class="ripple-container"></div></a>-->
+              <a href="{{ route('store') }}" class="btn btn-info  btn-dashbord">
+                رجوع
+                <div class="ripple-container"></div>
+              </a>
+              <a href="{{ route('health.animal') }}" class="btn btn-primary btn-dashbord"> الحالة الصحية <div class="ripple-container"></div></a>
+               <a   class="btn btn-default btn-dashbord pull-left"> طباعة <div class="ripple-container"></div></a>
+              <a href="{{ route('add.animal') }}" class="btn btn-success btn-dashbord"> أضافة حيوان  <div class="ripple-container"></div></a>
+                 <a href="{{ route('sick.animal') }}" class="btn btn-warning  btn-dashbord">
+                    الأمراض
+                    <div class="ripple-container"></div>
+                 </a>
+                 <button class="btn btn-info btn-dashbord" data-toggle="modal" data-target="#sickModal">أضافة مرض</button>
+                 <button class="btn btn-primary btn-dashbord" data-toggle="modal" data-target="#sickAnimalModal">أضافة مريض</button>
  						</div>
           </div>
           <!-- //////////////////////////////////////////////// -->
@@ -215,17 +225,15 @@
              </div>
           </div>
  <!-- /////////////////////////////// -->
-        </div>
  						</div>
 					</div>
 
   	    	</div>
 
 
-
-
 	</div>
   @include('layouts.int.footer.admin_footer')
-
+@include('template.sick.addAnimalSick')
+@include('template.sick.addSick')
 </div>
  @endsection

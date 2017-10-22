@@ -22,6 +22,20 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+  $(".select2-multpl").select2();
+     // $('.js-example-basic-single').select2();
+$(".js-example-rtl").select2({
+  dir: "rtl"
+});
+    $('.js-example-basic-single').select2();
+
+$(".js-example-basic-multiple-limit").select2({
+  maximumSelectionLength: 1
+});
+  </script>
+
       {!! Toastr::message() !!}
+
 </body>
 </html>
