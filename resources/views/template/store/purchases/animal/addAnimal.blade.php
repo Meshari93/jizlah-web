@@ -43,7 +43,7 @@
                             <div class="radio">
               								<label>
               									<input type="radio"   name="typeAnimal" value="naimi"><span class="circle"></span><span class="check"></span>
-                                نعمي
+                                نعيمي
               								</label>
               							</div>
                           </div>

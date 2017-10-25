@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-  Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
-    return view('welcome');
-});
-
+Route::get('/', 'WelcomeController@index')->name('welcome');
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

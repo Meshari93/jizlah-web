@@ -24,7 +24,8 @@ class CreateAnimalsTable extends Migration
             $table->string('supplier');
             $table->text('date_of_purchase');
             $table->text('date_of_sale')->nullable();
-            $table->string('health_status')->nullable();
+            $table->text('note')->nullable();
+            $table->enum('health_status', ['fit', 'sick'])->nullable();
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();
             $table->string('img3')->nullable();

@@ -1,16 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
 
 // Model
 use App\Sick;
 use App\Animal;
 use App\animal_sick;
-
 
 use Toastr;
 class AnimalHealthController extends Controller
@@ -20,47 +16,63 @@ class AnimalHealthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-      // $sickName = animal_sick::select('sick_id')->get();
+      $animal_sick = new animal_sick;
       $animalID = Animal::select('id')->get();
-     // $sickrisks = Sick::select('id', 'description', 'transmission', 'riskiness')->get();
-       $sickName = Sick::select('name', 'id', 'description', 'recommendation', 'transmission', 'riskiness')->get();
+      $sickName = Sick::select('name', 'id', 'description', 'recommendation', 'transmission', 'riskiness')->get();
 
-      if (request()->has('specialCare')) {
-            $animal_sick = animal_sick::where('specialCare', request('specialCare'))->paginate(4);
-      }else {
-        $animal_sick = animal_sick::paginate(4);
+    if ($request != NULL) {
+      if (request()->has('specialCare')){
+         $animal_sick = $animal_sick->where('specialCare', request('specialCare'));
+        //  $queries[$column] = request($column);
       }
-      if (request()->has('isolation')) {
-            $animal_sick = animal_sick::where('isolation', request('isolation'))->paginate(4);
-      }else {
-        $animal_sick = animal_sick::paginate(4);
+      if(request()->has('isolation')) {
+         $animal_sick = $animal_sick->where('isolation', request('isolation'));
       }
 
-      if (request()->has('riskiness')) {
-      foreach ($sickName as $sickrisk) {
-        if ($sickrisk->riskiness == request('riskiness')) {
-            $animal_sick = animal_sick::where('sick_id', $sickrisk->id)->paginate(4);
+      $transm = [];
+      if(request()->has('transmission')) {
+        foreach ($sickName as $sick) {
+          if ($sick->transmission == request('transmission')) {
+            $transm[$sick->id] = [$sick->id];
+          }
         }
-      }
-    }else {
-        $animal_sick = animal_sick::paginate(4);
-      }
-      if (request()->has('transmission')) {
-      foreach ($sickName as $sickrisk) {
-        if ($sickrisk->transmission == request('transmission')) {
-            $animal_sick = animal_sick::where('sick_id', $sickrisk->id)->paginate(4);
+        foreach ($transm as $key => $value) {
+          $animal_sick = $animal_sick->where('sick_id', $value);
+          //dd($value);
         }
-      }
-    }else {
-        $animal_sick = animal_sick::paginate(4);
-      }
+        }
+
+      // if(request()->has('isolation')) {
+      //    $animal_sick = $animal_sick->where('isolation', request('isolation'));
+      // }
+      // if(request()->has('isolation')) {
+      //    $animal_sick = $animal_sick->where('isolation', request('isolation'));
+      // }
+      // if(request()->has('isolation')) {
+      //    $animal_sick = $animal_sick->where('isolation', request('isolation'));
+      // }
+      // if(request()->has('isolation')) {
+      //    $animal_sick = $animal_sick->where('isolation', request('isolation'));
+      // }
+      // if(request()->has('isolation')) {
+      //    $animal_sick = $animal_sick->where('isolation', request('isolation'));
+      // }
+      $animal_sick = $animal_sick->paginate(25);
+    }
+    else {
+      $animal_sick = $animal_sick->paginate(4);
+    }
+// $animal_sick = $animal_sick->paginate(4)->appends($queries);
+
+
         return view('template.store.purchases.animal.healthStatus', [
           'sickName' => $sickName ,'animalID' => $animalID,
           'animal_sick' => $animal_sick,
         ]);
+
 
     }
 
