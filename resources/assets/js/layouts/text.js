@@ -10,4 +10,5 @@
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
 
+
 		});

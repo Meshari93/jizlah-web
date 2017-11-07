@@ -10,6 +10,11 @@
 .font-14{
   font-size: 14px
 }
+.simpleIcon {
+  padding: 25px;
+  font-size: 27px;
+
+}
 .input-from-group{
   margin-top: 10px;
 }

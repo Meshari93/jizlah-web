@@ -1155,4 +1155,5 @@ function debounce(func, wait, immediate) {
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
 
+
 		});

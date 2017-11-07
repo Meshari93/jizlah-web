@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
- 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -37,3 +37,8 @@ Route::prefix('store')->group(function(){
   Route::get('/sick', 'AnimalSickController@index')->name('sick.animal'); //return view of sick
   Route::get('/deleteSick/{id}', 'AnimalSickController@destroy')->name('delete.sick');//  delete sick
   Route::post('/addSickAnimal', 'AnimalHealthController@store')->name('addSickAnimal.animal'); //add Animal Sick
+
+
+//Cart route ------------//
+
+Route::post('/addCart/{idAinmal}', 'CartController@addCart')->name('addCart');

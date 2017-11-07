@@ -274,7 +274,14 @@
                                 <button type="submit" class="btn btn-primary  btn-dashbord">
                                   تطبيق
                                 </button>
-                              <a href "{{ route('welcome') }}" style=" width: 78px;" class="btn btn-danger btn-dashbord">  إلغاء </a>
+                                <form class="" action="index.html" method="post">
+
+                                </form>
+                                <form  class="form-horizontal" method="get" action="{{ route('welcome') }}" enctype="multipart/form-data">
+                                  <button type="submit"  style=" width: 78px;" class="btn btn-danger btn-dashbord">
+                                    ألغاء
+                                  </button>
+                                </form>
 
                               </div>
                             </div>
@@ -292,87 +299,74 @@
                            <div class="content ">
                              <div class="row ">
                                <div class="col-xs-12 rtl   pull-right">
-                                  <video   muted autoplay width="510" height="300">
+                                  <video   muted autoplay width="510" height="300" loop>
                                     <source src="/video/videoAnimal/{{ $animal->Video}}">
                                   </video>
                                </div>
                              </div>
                              <div class="footer">
                                <hr>
-                              <div class="col-sm-4 pull-right ">
-                                <div class="col-sm-6 pull-right">
-                                  <h6> : الصنف</h6>
-                                  </div>
-                                  <div class="col-sm-6 pull-right" style="margin-top: 10px;margin-right: -35px;">
-                                      @if($animal->type == 'najdi')
-                                      <p>نجدي</p>
-                                      @elseif($animal->type == 'naimi')
-                                      <p>  نعيمي</p>
-                                      @elseif($animal->type == 'huri')
-                                      <p> حري </p>
-                                      @elseif($animal->type == 'barbry')
-                                      <p> بربري </p>
-                                      @elseif($animal->type == 'sawakini')
-                                      <p> سواكني </p>
-                                      @elseif($animal->type == 'tays')
-                                      <p> ماعز </p>
-                                      @endif
-                                  </div>
+                               <div class="col-sm-10 pull-right">
+                               <table class="table text-right rtl">
+                                <thead>
+                                    <tr>
+                                        <th class="text-right"> الصنف </th>
+                                        <th class="text-right"> النوع </th>
+                                         <th class="text-right"> العمر </th>
+                                         <th class="text-right"> الوزن </th>
+                                         <th class="text-right"> السعر </th>
 
-                              </div>
-                              <div class="col-sm-3 pull-right rtl">
-                                <div class="col-sm-6 pull-right">
-                                  <h6> النوع </h6>
-                                </div>
-                                <div class="col-sm-6 pull-right">
-                                  @if($animal->gender == 'male')
-                                  <p>ذكر</p>
-                                  @elseif($animal->gender == 'female')
-                                  <p>  أنثى </p>
-                                  @endif
-                                </div>
-                              </div>
-                              <div class="col-sm-4 pull-right rtl ">
-                                <div class="col-sm-6 pull-right">
-                                  <h6> : العمر </h6>
-                                </div>
-                                <div class="col-sm-2 pull-right">
-                                  <p>  {{ $animal->age}} </p>
-                                </div>
-                                <div class="col-sm-4 pull-right" >
-                                  <p>شهر</p>
-                                </div>
-                              </div>
-                              <div class="col-sm-4 pull-right">
-                                <div class="col-sm-6 pull-right" >
-                                  <h6>  الوزن </h6>
-                                </div>
-                                <div class="col-sm-2 pull-right" >
-                                  <p>{{ $animal->weight}}</p>
-                                </div>
-                                <div class="col-sm-4 pull-right">
-                                  <p>كيلو</p>
-                                </div>
-                              </div>
-                              <div class="col-sm-4 pull-right">
-                                <div class="col-sm-6 pull-right">
-                                  <h6> السعر </h6>
-                                </div>
-                                <div class="col-sm-2 pull-right"</p>
-                                </div>
-                                <div class="col-sm-4 pull-right">
-                                  <p>ريال   </p>
-                                </div>
-                              </div>
-                              @if(Auth::user())
-                              <div class="col-sm-3 pull-right">
-                                <button type="button" class="btn btn-primary  btn-dashbord" name="button"> شراء </button>
-                              </div>
-                              @else
-                              <div class="col-sm-3 pull-right">
-                                <button type="button" class="btn btn-danger  btn-dashbord" name="button"> شراء </button>
-                              </div>
-                              @endif
+                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-right">
+                                          @if($animal->type == 'najdi')
+                                          نجدي
+                                         @elseif($animal->type == 'naimi')
+                                           نعيمي
+                                         @elseif($animal->type == 'huri')
+                                          حري
+                                         @elseif($animal->type == 'barbry')
+                                           بربري
+                                         @elseif($animal->type == 'sawakini')
+                                          سواكني
+                                         @elseif($animal->type == 'tays')
+                                          ماعز
+                                         @endif
+                                        </td>
+                                        <td class="text-right">
+                                           @if($animal->gender == 'male')
+                                            ذكر
+                                           @elseif($animal->gender == 'female')
+                                              أنثى
+                                           @endif
+                                        </td>
+                                        <td class="text-right">
+                                          {{ $animal->age}} .شهر
+                                        </td>
+                                        <td class="text-right">
+                                          {{ $animal->weight}} .kg
+                                        </td>
+                                        <td class="text-right">
+                                          {{ $animal->selling_price}} .SR
+                                        </td>
+                                      </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div class="col-sm-2 pull-left">
+                                  @if(Auth::user())
+                                   <!-- <a type="button" href="/addCart/{{$animal->id}}" class="btn btn-primary  btn-dashbord" name="button"> شراء </a> -->
+                                   <form enctype="multipart/form-data" class=""  id="buyAnimal" method="get" action="addCart">
+                                       <input type="number" name="buyanimal" id="buyanimal" value="{{$animal->id}}" hidden="hidden">
+                                     <button type="submit" value="
+                                     submit" class="btn btn-primary  btn-dashbord"> شراء </button>
+                                   </form>
+                                 @else
+                                   <button type="button" class="btn btn-danger  btn-dashbord" name="button" data-toggle="modal" data-target="#loginUser"> شراء </button>
+                                 @endif
+                            </div>
                              </div>
                            </div>
                          </div>
@@ -384,9 +378,7 @@
                   <div class="space-50"></div>
                   <div class="space-50"></div>
               </div>
-
           </div>
-
           <footer class="footer">
               <div class="container">
                   <nav class="pull-left">
@@ -419,6 +411,128 @@
               </div>
           </footer>
       </div>
+
+<div class="modal fade" style="margin-top: -10px;min-width: 900px;" id="loginUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 900px; " >
+        <div class="modal-content">
+
+            <div class="modal-body">
+             			<div class="row">
+            				<div class="col-md-6 col-md-offset-6" style="margin-left: 0px;">
+            					<div class="card card-signup">
+            							<div class="header header-primary text-center">
+            								<h4 class="btn-dashbord"> تسجيل الدخول </h4>
+            							</div>
+            							<div class="content" style="padding: 0px 40px 0px 40px;">
+                            <form class="form-horizontal rtl" method="POST" action="{{ route('login') }}">
+                                {{ csrf_field() }}
+                									<div class="col-md-12 input-group{{ $errors->has('email') ? ' has-error' : '' }} text-center">
+                										 <div class="col-md-12">
+                  										<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="الأيميل "/>
+                                      @if ($errors->has('email'))
+                                          <span class="help-block">
+                                              <strong>{{ $errors->first('email') }}</strong>
+                                          </span>
+                                      @endif
+                									</div>
+                                  </div>
+                									<div class="col-md-12 input-group{{ $errors->has('password') ? ' has-error' : '' }} text-center">
+                                    <div class="col-md-12">
+                										<input  id="password" type="password" class="form-control" name="password" required placeholder="كلمة المرور "/>
+                                  @if ($errors->has('password'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('password') }}</strong>
+                                      </span>
+                                  @endif
+                                  </div>
+                									</div>
+                									<div class="checkbox" style="margin-top: 25px;">
+              										<label>
+              											<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} >
+              											تذكرني
+              										</label>
+              									</div>
+                								</div>
+                								<div class="footer text-center" style="margin-top: 63px;">
+                                  <button type="submit" class="btn btn-primary btn-dashbord">
+                                      دخول
+                                  </button>
+                                   <button type="submit" href="{{ route('password.request') }}" class="btn btn-default btn-dashbord">
+                                       نسيت كلمة السر
+                                   </button>
+                 								</div>
+                							</form>
+            					</div>
+            				</div>
+
+                    <div class="col-md-6 col-md-offset-6" style="margin-left: 0px;">
+            					<div class="card card-signup">
+            							<div class="header header-primary text-center">
+            								<h4 class="btn-dashbord"> تسجيل مستخدم جديد</h4>
+
+            							</div>
+
+            							<div class="content" style="padding: 0px 40px 0px 40px;">
+                            <div class="social-line" style="margin-top: 30px;">
+               										<a href="#pablo" class="simpleIcon">
+               											<i class="fa fa-facebook-square"></i>
+               										<div class="ripple-container"></div></a>
+               										<a href="#pablo" class="simpleIcon">
+               											<i class="fa fa-twitter"></i>
+               										</a>
+               										<a href="#pablo" class="simpleIcon">
+               											<i class="fa fa-google-plus"></i>
+               										</a>
+               									</div>
+                                  <form class="form-horizontal rtl" method="POST" action="{{ route('register') }}">
+                                      {{ csrf_field() }}
+                                      <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} text-center">
+                                           <div class="col-md-12">
+                                              <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="الاسم الكامل ">
+                                               @if ($errors->has('name'))
+                                                  <span class="help-block">
+                                                      <strong>{{ $errors->first('name') }}</strong>
+                                                  </span>
+                                              @endif
+                                          </div>
+                                      </div>
+                                      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                           <div class="col-md-12">
+                                              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="الايميل ">
+                                              @if ($errors->has('email'))
+                                                  <span class="help-block">
+                                                      <strong>{{ $errors->first('email') }}</strong>
+                                                  </span>
+                                              @endif
+                                          </div>
+                                      </div>
+                                       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                           <div class="col-md-12">
+                                              <input id="password" type="password" class="form-control" name="password" required placeholder="كلمة المرور ">
+                                               @if ($errors->has('password'))
+                                                  <span class="help-block">
+                                                      <strong>{{ $errors->first('password') }}</strong>
+                                                  </span>
+                                              @endif
+                                          </div>
+                                      </div>
+                                    <div class="footer text-center">
+                                     <div class="col-md-4 col-md-offset-4">
+                                         <button type="submit" class="btn btn-primary btn-dashbord">
+                                             تسجيل
+                                         </button>
+                                     </div>
+                     								</div>
+                  							</form>
+            				</div>
+
+            			</div>
+             </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
       <!-- Scripts -->
       <script src="{{ asset('js/app.js') }}"></script>
       <script type="text/javascript">
@@ -432,6 +546,26 @@
           $(".js-example-basic-multiple-limit").select2({
               maximumSelectionLength: 1
           });
+
+
+           $(function()({
+             $('#buyAnimal').submit(function(e){
+               e.prefentDefault();
+               var buyanimal = $('input[name="buyanimal"]').val();
+               var data = new FormData();
+               data.append('buyanimal', buyanimal);
+               $ajax({
+                 url:'addCart',
+                 type:'GIT',
+                 data:data,
+                 contentType:"multipart/form-data",
+                 processData:false,
+                 success:function (data){alert(' ألى السلة بادر بأكمال عملية الشراء')}) {
+
+                 }
+               });
+             });
+           });
       </script>
   </body>
   </html>
